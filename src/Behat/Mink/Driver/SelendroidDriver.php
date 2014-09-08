@@ -83,30 +83,6 @@ class SelendroidDriver implements DriverInterface
         if (null === $desiredCapabilities) {
             $desiredCapabilities = self::getDefaultCapabilities();
         }
-        var_dump($desiredCapabilities);exit;
-
-// TODO: ffixme!
-        if (isset($desiredCapabilities['firefox'])) {
-            foreach ($desiredCapabilities['firefox'] as $capability => $value) {
-                switch ($capability) {
-                    case 'profile':
-                        $desiredCapabilities['firefox_' . $capability] = base64_encode(file_get_contents($value));
-                        break;
-                    default:
-                        $desiredCapabilities['firefox_' . $capability] = $value;
-                }
-            }
-
-            unset($desiredCapabilities['firefox']);
-        }
-
-        if (isset($desiredCapabilities['chrome'])) {
-            foreach ($desiredCapabilities['chrome'] as $capability => $value) {
-                $desiredCapabilities['chrome.' . $capability] = $value;
-            }
-
-            unset($desiredCapabilities['chrome']);
-        }
 
         $this->desiredCapabilities = $desiredCapabilities;
     }
