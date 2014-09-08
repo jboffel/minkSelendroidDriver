@@ -1,0 +1,28 @@
+
+{
+    "name":         "kasper-agg/mink-selendroid-driver",
+    "description":  "Selendroid (WebDriver) driver for Mink framework",
+    "keywords":     ["selendroid", "webdriver", "android", "testing", "browser"],
+    "homepage":     "http://mink.behat.org/",
+    "type":         "mink-driver",
+    "license":      "MIT",
+
+    "authors": [
+        {
+            "name":      "Kasper Agg",
+            "email":     "kasper.agg@gmail.com",
+        }
+    ],
+
+    "require": {
+        "php":                       ">=5.3.1",
+        "behat/mink":                "~1.4.3",
+        "instaclick/php-webdriver":  "~1.0.12"
+    },
+
+    "autoload": {
+        "psr-0": {
+            "Behat\\Mink\\Driver": "src/"
+        }
+    }
+}
