@@ -117,7 +117,6 @@ class SelendroidDriver implements DriverInterface
     {
         return array(
             'browserName' => 'android',
-            'aut' => 'io.selendroid.testapp:0.11.0',
             'emulator' => 'True',
             'platformVersion' => '19',
             'locale' => 'en_US',

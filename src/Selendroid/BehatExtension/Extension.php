@@ -7,6 +7,7 @@ use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
+use WebDriver\ServiceFactory;
 
 class Extension implements ExtensionInterface
 {
@@ -21,6 +22,9 @@ class Extension implements ExtensionInterface
      */
     public function load(array $config, ContainerBuilder $container)
     {
+        /** @var \WebDriver\Service\CurlService $service */
+        $f = ServiceFactory::getInstance();
+        $f->setServiceClass('service.curl', '\\Selendroid\\Service\\CurlService');
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/services'));
 //        $loader->load('core.xml');
 
