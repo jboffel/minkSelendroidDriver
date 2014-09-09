@@ -22,7 +22,7 @@ class Extension implements ExtensionInterface
     public function load(array $config, ContainerBuilder $container)
     {
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/services'));
-        $loader->load('core.xml');
+//        $loader->load('core.xml');
 
         if (isset($config['selendroid'])) {
             if (!class_exists('Selendroid\\Driver\\SelendroidDriver')) {
