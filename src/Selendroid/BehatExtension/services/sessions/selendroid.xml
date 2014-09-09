@@ -9,7 +9,6 @@
         <parameter key="behat.mink.selendroid.browser">%behat.mink.browser_name%</parameter>
         <parameter key="behat.mink.selendroid.capabilities" type="collection">
             <parameter key="browserName" type="string">android</parameter>
-            <parameter key="aut" type="string">io.selendroid.testapp:0.11.0</parameter>
             <parameter key="emulator" type="string">True</parameter>
             <parameter key="platformVersion" type="string">19</parameter>
             <parameter key="locale" type="string">en_US</parameter>
