@@ -64,9 +64,9 @@ class SelendroidDriver implements DriverInterface
     /**
      * Sets the browser name
      *
-     * @param string $browserName the name of the browser to start, default is 'firefox'
+     * @param string $browserName the name of the browser to start, default is 'android'
      */
-    protected function setBrowserName($browserName = 'firefox')
+    protected function setBrowserName($browserName = 'android')
     {
         $this->browserName = $browserName;
     }
