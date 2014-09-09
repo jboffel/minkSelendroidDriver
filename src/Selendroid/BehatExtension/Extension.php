@@ -114,9 +114,6 @@ class Extension implements ExtensionInterface
                                 scalarNode('browserName')->
                                     defaultValue(isset($config['selendroid']['capabilities']['browserName']) ? $config['selendroid']['capabilities']['browserName'] : 'android')->
                                 end()->
-                                scalarNode('aut')->
-                                    defaultValue(isset($config['selendroid']['capabilities']['aut']) ? $config['selendroid']['capabilities']['aut'] : "io.selendroid.testapp:0.11.0")->
-                                end()->
                                 scalarNode('emulator')->
                                     defaultValue(isset($config['selendroid']['capabilities']['emulator']) ? $config['selendroid']['capabilities']['emulator'] : "True")->
                                 end()->
