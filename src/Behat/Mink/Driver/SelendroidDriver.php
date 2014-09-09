@@ -1,7 +1,6 @@
 <?php
-namespace KasperAgg;
+namespace Behat\Mink\Driver;
 
-use Behat\Mink\Driver\DriverInterface;
 use Behat\Mink\Element\NodeElement;
 use Behat\Mink\Exception\DriverException;
 use Behat\Mink\Exception\UnsupportedDriverActionException;
