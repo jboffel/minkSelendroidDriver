@@ -23,7 +23,8 @@
     "autoload": {
         "psr-0": {
             "Selendroid\\Driver": "src/",
-            "Selendroid\\BehatExtension": "src/"
+            "Selendroid\\BehatExtension": "src/",
+            "Selendroid\\Service": "src/"
         }
     }
 }
