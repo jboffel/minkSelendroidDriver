@@ -31,7 +31,7 @@ class Extension implements ExtensionInterface
                 );
             }
 
-//            $loader->load('sessions/selendroid.xml');
+            $loader->load('sessions/selendroid.xml');
         }
 
         $minkParameters = array();
