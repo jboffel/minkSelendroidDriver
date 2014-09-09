@@ -117,79 +117,91 @@ class Extension implements ExtensionInterface
                                 scalarNode('aut')->
                                     defaultValue(isset($config['selendroid']['capabilities']['aut']) ? $config['selendroid']['capabilities']['aut'] : "io.selendroid.testapp:0.11.0")->
                                 end()->
-                                scalarNode('version')->
-                                    defaultValue(isset($config['selendroid']['capabilities']['version']) ? $config['selendroid']['capabilities']['version'] : "9")->
+                                scalarNode('emulator')->
+                                    defaultValue(isset($config['selendroid']['capabilities']['emulator']) ? $config['selendroid']['capabilities']['emulator'] : "True")->
                                 end()->
-                                scalarNode('platform')->
-                                    defaultValue(isset($config['selendroid']['capabilities']['platform']) ? $config['selendroid']['capabilities']['platform'] : 'ANY')->
+                                scalarNode('platformVersion')->
+                                    defaultValue(isset($config['selendroid']['capabilities']['platformVersion']) ? $config['selendroid']['capabilities']['platformVersion'] : "19")->
                                 end()->
-                                scalarNode('browserVersion')->
-                                    defaultValue(isset($config['selendroid']['capabilities']['browserVersion']) ? $config['selendroid']['capabilities']['browserVersion'] : "9")->
+                                scalarNode('locale')->
+                                    defaultValue(isset($config['selendroid']['capabilities']['locale']) ? $config['selendroid']['capabilities']['locale'] : "en_US")->
                                 end()->
-                                scalarNode('browser')->
-                                    defaultValue(isset($config['selendroid']['capabilities']['browser']) ? $config['selendroid']['capabilities']['browser'] : 'android')->
+                                scalarNode('screenSize')->
+                                    defaultValue(isset($config['selendroid']['capabilities']['screenSize']) ? $config['selendroid']['capabilities']['screenSize'] : "720x1280")->
                                 end()->
-                                scalarNode('ignoreZoomSetting')->
-                                    defaultValue(isset($config['selendroid']['capabilities']['ignoreZoomSetting']) ? $config['selendroid']['capabilities']['ignoreZoomSetting'] : 'false')->
-                                end()->
-                                scalarNode('name')->
-                                    defaultValue(isset($config['selendroid']['capabilities']['name']) ? $config['selendroid']['capabilities']['name'] : 'Behat Test')->
-                                end()->
-                                scalarNode('deviceOrientation')->
-                                    defaultValue(isset($config['selendroid']['capabilities']['deviceOrientation']) ? $config['selendroid']['capabilities']['deviceOrientation'] : 'portrait')->
-                                end()->
-                                scalarNode('deviceType')->
-                                    defaultValue(isset($config['selendroid']['capabilities']['deviceType']) ? $config['selendroid']['capabilities']['deviceType'] : 'tablet')->
-                                end()->
-                                scalarNode('selenium-version')->
-                                    defaultValue(isset($config['selendroid']['capabilities']['selenium-version']) ? $config['selendroid']['capabilities']['selenium-version'] : '2.31.0')->
-                                end()->
-                                scalarNode('max-duration')->
-                                    defaultValue(isset($config['selendroid']['capabilities']['max-duration']) ? $config['selendroid']['capabilities']['max-duration'] : '300')->
-                                end()->
-                                booleanNode('javascriptEnabled')->end()->
-                                booleanNode('databaseEnabled')->end()->
-                                booleanNode('locationContextEnabled')->end()->
-                                booleanNode('applicationCacheEnabled')->end()->
-                                booleanNode('browserConnectionEnabled')->end()->
-                                booleanNode('webStorageEnabled')->end()->
-                                booleanNode('rotatable')->end()->
-                                booleanNode('acceptSslCerts')->end()->
-                                booleanNode('nativeEvents')->end()->
-                                booleanNode('passed')->end()->
-                                booleanNode('record-video')->end()->
-                                booleanNode('record-screenshots')->end()->
-                                booleanNode('capture-html')->end()->
-                                booleanNode('disable-popup-handler')->end()->
-                                arrayNode('proxy')->
-                                    children()->
-                                        scalarNode('proxyType')->end()->
-                                        scalarNode('proxyAuthconfigUrl')->end()->
-                                        scalarNode('ftpProxy')->end()->
-                                        scalarNode('httpProxy')->end()->
-                                        scalarNode('sslProxy')->end()->
-                                    end()->
-                                    validate()->
-                                        ifTrue(function ($v) {
-                                                return empty($v);
-                                            })->
-                                        thenUnset()->
-                                    end()->
-                                end()->
-                                arrayNode('android')->
-                                    children()->
-                                        scalarNode('profile')->
-                                            validate()->
-                                                ifTrue(function ($v) {
-                                                return !file_exists($v);
-                                            })->
-                                             thenInvalid('Cannot find profile zip file %s')->
-                                            end()->
-                                        end()->
-                                    end()->
-                                end()->
-                            end()->
-                        end()->
+//                                scalarNode('version')->
+//                                    defaultValue(isset($config['selendroid']['capabilities']['version']) ? $config['selendroid']['capabilities']['version'] : "9")->
+//                                end()->
+//                                scalarNode('platform')->
+//                                    defaultValue(isset($config['selendroid']['capabilities']['platform']) ? $config['selendroid']['capabilities']['platform'] : 'ANY')->
+//                                end()->
+//                                scalarNode('browserVersion')->
+//                                    defaultValue(isset($config['selendroid']['capabilities']['browserVersion']) ? $config['selendroid']['capabilities']['browserVersion'] : "9")->
+//                                end()->
+//                                scalarNode('browser')->
+//                                    defaultValue(isset($config['selendroid']['capabilities']['browser']) ? $config['selendroid']['capabilities']['browser'] : 'android')->
+//                                end()->
+//                                scalarNode('ignoreZoomSetting')->
+//                                    defaultValue(isset($config['selendroid']['capabilities']['ignoreZoomSetting']) ? $config['selendroid']['capabilities']['ignoreZoomSetting'] : 'false')->
+//                                end()->
+//                                scalarNode('name')->
+//                                    defaultValue(isset($config['selendroid']['capabilities']['name']) ? $config['selendroid']['capabilities']['name'] : 'Behat Test')->
+//                                end()->
+//                                scalarNode('deviceOrientation')->
+//                                    defaultValue(isset($config['selendroid']['capabilities']['deviceOrientation']) ? $config['selendroid']['capabilities']['deviceOrientation'] : 'portrait')->
+//                                end()->
+//                                scalarNode('deviceType')->
+//                                    defaultValue(isset($config['selendroid']['capabilities']['deviceType']) ? $config['selendroid']['capabilities']['deviceType'] : 'tablet')->
+//                                end()->
+//                                scalarNode('selenium-version')->
+//                                    defaultValue(isset($config['selendroid']['capabilities']['selenium-version']) ? $config['selendroid']['capabilities']['selenium-version'] : '2.31.0')->
+//                                end()->
+//                                scalarNode('max-duration')->
+//                                    defaultValue(isset($config['selendroid']['capabilities']['max-duration']) ? $config['selendroid']['capabilities']['max-duration'] : '300')->
+//                                end()->
+//                                booleanNode('javascriptEnabled')->end()->
+//                                booleanNode('databaseEnabled')->end()->
+//                                booleanNode('locationContextEnabled')->end()->
+//                                booleanNode('applicationCacheEnabled')->end()->
+//                                booleanNode('browserConnectionEnabled')->end()->
+//                                booleanNode('webStorageEnabled')->end()->
+//                                booleanNode('rotatable')->end()->
+//                                booleanNode('acceptSslCerts')->end()->
+//                                booleanNode('nativeEvents')->end()->
+//                                booleanNode('passed')->end()->
+//                                booleanNode('record-video')->end()->
+//                                booleanNode('record-screenshots')->end()->
+//                                booleanNode('capture-html')->end()->
+//                                booleanNode('disable-popup-handler')->end()->
+//                                arrayNode('proxy')->
+//                                    children()->
+//                                        scalarNode('proxyType')->end()->
+//                                        scalarNode('proxyAuthconfigUrl')->end()->
+//                                        scalarNode('ftpProxy')->end()->
+//                                        scalarNode('httpProxy')->end()->
+//                                        scalarNode('sslProxy')->end()->
+//                                    end()->
+//                                    validate()->
+//                                        ifTrue(function ($v) {
+//                                                return empty($v);
+//                                            })->
+//                                        thenUnset()->
+//                                    end()->
+//                                end()->
+//                                arrayNode('android')->
+//                                    children()->
+//                                        scalarNode('profile')->
+//                                            validate()->
+//                                                ifTrue(function ($v) {
+//                                                return !file_exists($v);
+//                                            })->
+//                                             thenInvalid('Cannot find profile zip file %s')->
+//                                            end()->
+//                                        end()->
+//                                    end()->
+//                                end()->
+//                            end()->
+//                        end()->
                         scalarNode('wd_host')->
                             defaultValue(isset($config['selendroid']['wd_host']) ? $config['selendroid']['wd_host'] : 'http://localhost:4444/wd/hub')->
                         end()->
