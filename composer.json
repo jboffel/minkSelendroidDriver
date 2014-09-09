@@ -1,7 +1,7 @@
 
 {
     "name":         "kasper-agg/mink-selendroid-driver",
-    "description":  "Selendroid (WebDriver) driver for Mink framework",
+    "description":  "Selendroid (WebDriver) driver Extension for Mink framework",
     "keywords":     ["selendroid", "webdriver", "android", "testing", "browser"],
     "homepage":     "http://mink.behat.org/",
     "type":         "mink-driver",
@@ -22,7 +22,7 @@
 
     "autoload": {
         "psr-0": {
-            "Behat\\Mink\\Driver": "src/"
+            "Selendroid\\Extension": "src/"
         }
     }
 }
