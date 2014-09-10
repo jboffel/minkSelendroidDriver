@@ -26,7 +26,7 @@ Note: you must manually create an AVD and make sure your settings match. Current
 ```
 
 ## Usage
-Annotate your Sceanrio with @Javascript:
+Annotate your Scenario with @Javascript:
 ```
 Feature: a feature
   
