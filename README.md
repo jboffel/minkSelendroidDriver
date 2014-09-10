@@ -24,3 +24,13 @@ Note: you must manually create an AVD and make sure your settings match. Current
     selendroid:
       capabilities: {browserName: "android", screenSize: "480x800", emulator: true, platformVersion: "19"}
 ```
+
+## Usage
+Annotate your Sceanrio with @Javascript:
+```
+Feature: a feature
+  
+  @Javascript
+  Scenario: a scenario
+  Given I am on "/"
+```
