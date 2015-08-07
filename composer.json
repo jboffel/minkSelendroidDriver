@@ -1,6 +1,6 @@
 
 {
-    "name":         "kasper-agg/mink-selendroid-driver",
+    "name":         "jboffel/mink-selendroid-driver",
     "description":  "Selendroid (WebDriver) driver Extension for Mink framework",
     "keywords":     ["selendroid", "webdriver", "android", "testing", "browser"],
     "homepage":     "http://mink.behat.org/",
@@ -16,8 +16,8 @@
 
     "require": {
         "php":                       ">=5.3.1",
-        "behat/mink":                "~1.4.3",
-        "instaclick/php-webdriver":  "~1.0.12"
+        "behat/mink":                "*",
+        "instaclick/php-webdriver":  "*"
     },
 
     "autoload": {
