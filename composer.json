@@ -1,6 +1,6 @@
 
 {
-    "name":         "kasper-agg/mink-selendroid-driver",
+    "name":         "jboffel/mink-selendroid-driver",
     "description":  "Selendroid (WebDriver) driver Extension for Mink framework",
     "keywords":     ["selendroid", "webdriver", "android", "testing", "browser"],
     "homepage":     "http://mink.behat.org/",
