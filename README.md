@@ -5,13 +5,13 @@ A Selendroid Driver for Mink.
 ## Install with composer (currently using require-dev)
 ```json
 "require-dev": {
-    "kasper-agg/mink-selendroid-driver": "dev-master"
+    "jboffel/mink-selendroid-driver": "dev-master"
 },
 
 "repositories": [
     {
         "type": "vcs",
-        "url": "https://github.com/kasper-agg/minkSelendroidDriver.git"
+        "url": "https://github.com/jboffel/minkSelendroidDriver.git"
     }
 ],
 ```
