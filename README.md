@@ -11,7 +11,7 @@ A Selendroid Driver for Mink.
 "repositories": [
     {
         "type": "vcs",
-        "url": "https://github.com/kasper-agg/minkSelendroidDriver.git"
+        "url": "https://github.com/jboffel/minkSelendroidDriver.git"
     }
 ],
 ```
